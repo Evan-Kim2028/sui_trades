@@ -21,3 +21,6 @@ contracts:
   - chain: sui_mainnet
     address: "0xa0eba10b173538c8fecca1dff298e488402cc9ff374f8a12ca7758eebe830b66"
     name: kriya
+  - chain: sui_mainnet
+    address: "0x2c8d603bc51326b8c13cef9dd07031a408a48dddb541963357661df5d3204809"
+    name: deepbook_v3

@@ -5,7 +5,7 @@ import { pool as cetus} from "../types/sui/cetus_factory.js";
 import { pool as turbos} from "../types/sui/turbos_factory.js";
 import { swap as flowx} from "../types/sui/flowx.js";
 import { spot_dex as kriya} from "../types/sui/kriya.js";
-
+import { order_info as deepbook} from "../types/sui/deepbook_v3.js";
 export function initSwapProcessor() { 
     // aftermath
     aftermath.bind().onEventSwapEvent((event, ctx) => {
@@ -110,6 +110,26 @@ export function initSwapProcessor() {
         })
     });
 
-
+    // deepbook
+    deepbook.bind().onEventOrderFilled((event, ctx) => {
+        ctx.eventLogger.emit("deepbook_swap_event", {
+            pool_id: event.data_decoded.pool_id,
+            maker_order_id: event.data_decoded.maker_order_id,
+            taker_order_id: event.data_decoded.taker_order_id,
+            maker_client_order_id: event.data_decoded.maker_client_order_id,
+            taker_client_order_id: event.data_decoded.taker_client_order_id,
+            price: event.data_decoded.price,
+            taker_is_bid: event.data_decoded.taker_is_bid,
+            taker_fee: event.data_decoded.taker_fee,
+            taker_fee_is_deep: event.data_decoded.taker_fee_is_deep,
+            maker_fee: event.data_decoded.maker_fee,
+            maker_fee_is_deep: event.data_decoded.maker_fee_is_deep,
+            base_quantity: event.data_decoded.base_quantity,
+            quote_quantity: event.data_decoded.quote_quantity,
+            maker_balance_manager_id: event.data_decoded.maker_balance_manager_id,
+            taker_balance_manager_id: event.data_decoded.taker_balance_manager_id,
+            timestamp: event.data_decoded.timestamp
+        })
+    });
 
 }
