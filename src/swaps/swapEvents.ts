@@ -21,7 +21,8 @@ const fetchConfig: MoveFetchConfig = {
 export function initSwapProcessor() { 
     // aftermath
     aftermath.bind().onEventSwapEvent((event, ctx) => {
-        ctx.eventLogger.emit("aftermath_swap_eventv1", {
+        ctx.eventLogger.emit("aftermath_swap_event", {
+            protocol_version: "v1",
             pool_id: event.data_decoded.pool_id,
             issuer: event.data_decoded.issuer,
             referrer: event.data_decoded.referrer,
@@ -29,6 +30,7 @@ export function initSwapProcessor() {
             amounts_in: JSON.stringify(event.data_decoded.amounts_in),
             types_out: JSON.stringify(event.data_decoded.types_out),
             amounts_out: JSON.stringify(event.data_decoded.amounts_out),
+            reserves: "[]",
             sender: event.sender,
             storage_cost: ctx.transaction.effects?.gasUsed.storageCost,
             gas_computation: ctx.transaction.effects?.gasUsed.computationCost,
@@ -37,7 +39,8 @@ export function initSwapProcessor() {
         })
     }, fetchConfig)
     .onEventSwapEventV2((event, ctx) => {
-        ctx.eventLogger.emit("aftermath_swap_eventv2", {
+        ctx.eventLogger.emit("aftermath_swap_event", {
+            protocol_version: "v2",
             pool_id: event.data_decoded.pool_id,
             issuer: event.data_decoded.issuer,
             referrer: event.data_decoded.referrer,
