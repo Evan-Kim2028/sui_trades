@@ -24,3 +24,9 @@ contracts:
   - chain: sui_mainnet
     address: "0x2c8d603bc51326b8c13cef9dd07031a408a48dddb541963357661df5d3204809"
     name: deepbook_v3
+  - chain: sui_mainnet
+    address: "0x08cd33481587d4c4612865b164796d937df13747d8c763b8a178c87e3244498f"
+    name: bluemove
+  - chain: sui_mainnet
+    address: "0x000000000000000000000000000000000000000000000000000000000000dee9"
+    name: deepbook_v2
