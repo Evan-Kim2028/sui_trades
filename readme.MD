@@ -1,5 +1,5 @@
 # sui_trades
-This repository curates events from various Sui-based decentralized exchanges (DEXes) and order book systems into a standardized set of tables. The goal is to make consumption of these swap events and order-fill events straightforward for analytics pipelines, explorers, or any downstream applications.
+This repository curates events from various spot trading protocols on Sui Mainnet into a standardized set of tables. The goal is to make consumption of these swap events and order-fill events straightforward for analytics. The pipeline is a [Sentio pipeline](https://www.sentio.xyz/), which offers free backfilling. Additionally, this project can be freely used by importing this sentio project `sui_trades` into your own sentio project. Reach out to @is_ye in the [sentio telegram chat](t.me/sentioxyz)  and give the referral code `evandekim2025` for a 20% discount for Sentio subscription!
 
 
 ## Overview
@@ -63,3 +63,10 @@ The design focuses on standardizing the event data so that each event record has
 * Both versions emit an order_filled_event with the same top-level keys (protocol, protocol_version, pool_id, etc.).
 * DeepBook v2 explicitly includes maker/taker addresses, but no quote_quantity.
 * DeepBook v3 includes quote_quantity but does not store maker/taker addresses.
+
+
+## Disclaimer:
+The protocol version is a placeholder and does not correctly reflect all protocol versions. 
+
+## Contributing:
+If you want to contribute to this Sentio Pipeline project or have questions, join the [Sui Data Group[(https://t.me/+X-lnanOfqoQ4ZGNh)] on telegram.
