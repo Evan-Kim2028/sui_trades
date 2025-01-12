@@ -1,3 +1,6 @@
-import { initSwapProcessor } from "./swaps/swapEvents.js";
+import { initSwapRawProcessor, initSingleSwapCuratedProcessor, initMultiSwapCuratedProcessor, initOrderCuratedProcessor } from "./swaps/swapEvents.js";
 
-initSwapProcessor();
+initSwapRawProcessor();
+initSingleSwapCuratedProcessor();
+initMultiSwapCuratedProcessor();
+initOrderCuratedProcessor();
