@@ -148,6 +148,7 @@ export function initSwapProcessor() {
         ctx.eventLogger.emit("kriya_swap_event", {
             pool_id: event.data_decoded.pool_id,
             user: event.data_decoded.user,
+            token_in: event.type_arguments[0],
             reserve_x: event.data_decoded.reserve_x,
             reserve_y: event.data_decoded.reserve_y,
             amount_in: event.data_decoded.amount_in,
