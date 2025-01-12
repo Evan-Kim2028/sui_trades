@@ -69,4 +69,4 @@ The design focuses on standardizing the event data so that each event record has
 The protocol version is a placeholder and does not correctly reflect all protocol versions. 
 
 ## Contributing:
-If you want to contribute to this Sentio Pipeline project or have questions, join the [Sui Data Group[(https://t.me/+X-lnanOfqoQ4ZGNh)] on telegram.
+If you want to contribute to this Sentio Pipeline project or have questions, join the [Sui Data Group](https://t.me/+X-lnanOfqoQ4ZGNh)] on telegram.
